@@ -87,7 +87,7 @@ class PowerController():
         print('\nWhat action do you want to start ?')
         try:
             target = input('---> ').strip()
-        except KeyboardInterrupt:
+        except (KeyboardInterrupt, EOFError):
             print()
             target = 'e'
         self.run(target)
@@ -95,6 +95,7 @@ class PowerController():
     def run(self, target, interactive=True):
         if target == 'e':
             print('Exit')
+            GPIO.cleanup()
             sys.exit(0)
         else:
             found = False
@@ -114,6 +115,7 @@ class PowerController():
             print('\n')
             self.menu()
         else:
+            GPIO.cleanup()
             sys.exit(0)
 
     def set_pin(self, pin, val):
