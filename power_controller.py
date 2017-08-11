@@ -21,9 +21,9 @@ class PowerController():
     CONF_PATH = os.path.expanduser('~/.power_controller.py')
     CONF = {
         'LOG_LEVEL': 'INFO',
-        'LED_GPIO': 18,
+        'LED_GPIO': 16,
         'SYSTEMS': [
-            {'gpio_on': 4, 'gpio_reboot': 17, 'label': 'Test machine'},
+            {'gpio_on': 21, 'gpio_reboot': 20, 'label': 'Test machine'},
         ],
     }
 
